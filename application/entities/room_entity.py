@@ -1,14 +1,10 @@
-from typing import List
-from pydantic import BaseModel
+from dataclasses import dataclass
 
 
-class RoomSchema(BaseModel):
+@dataclass
+class RoomEntity:
     id: int
     slug: str
     name: str
     key: str
     label: str
-
-
-class RoomListSchema(BaseModel):
-    room_list: List[RoomSchema]
