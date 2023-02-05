@@ -1,6 +1,10 @@
-from abc import ABC
+from abc import ABC, abstractmethod
+from typing import List
+
+from application.entities.room_entity import RoomEntity
 
 
-class BaseRepository(ABC):
-    def __init__(self, db_repo) -> None:
-        self.db_repo = db_repo
+class GetAllRooms(ABC):
+    @abstractmethod
+    def get_all(self) -> List[RoomEntity]:
+        pass

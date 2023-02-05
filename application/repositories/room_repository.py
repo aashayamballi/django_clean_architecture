@@ -3,10 +3,10 @@ from typing import List
 
 from application.entities.room_entity import RoomEntity
 
-from .interfaces import BaseRepository
+from .interfaces import GetAllRooms
 
 
-class RoomRepository(BaseRepository):
+class RoomRepository(GetAllRooms):
     def __init__(self, db_room_repo) -> None:
         self.db_room_repo = db_room_repo
 

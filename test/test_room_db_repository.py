@@ -6,7 +6,7 @@ from room.repository import RoomDBRepository
 
 
 @pytest.mark.django_db
-def test_get_all_rooms(populate_some_rooms_to_db):
+def test_get_all_rooms(populate_penthouse_and_basement_rooms_to_db):
     room_db_repository = RoomDBRepository()
     rooms = room_db_repository.get_all()
     assert rooms == [
@@ -16,7 +16,7 @@ def test_get_all_rooms(populate_some_rooms_to_db):
 
 
 @pytest.fixture(scope='session')
-def populate_some_rooms_to_db(django_db_setup, django_db_blocker):
+def populate_penthouse_and_basement_rooms_to_db(django_db_setup, django_db_blocker):
     with django_db_blocker.unblock():
         RoomModel.objects.create(
             id=1,
