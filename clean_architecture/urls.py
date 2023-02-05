@@ -16,6 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from room.views import RoomViewAPI
+from room.views import RoomAPIView
 
-urlpatterns = [path("admin/", admin.site.urls), path("rooms", RoomViewAPI.as_view(), name="get_all_room")]
+urlpatterns = [path("admin/", admin.site.urls), path("rooms", RoomAPIView.as_view(), name="get_all_room")]
